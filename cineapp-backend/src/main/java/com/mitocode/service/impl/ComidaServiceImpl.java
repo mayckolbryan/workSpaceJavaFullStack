@@ -9,39 +9,39 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mitocode.dao.IPeliculaDAO;
-import com.mitocode.model.Pelicula;
-import com.mitocode.service.IPeliculaService;
+import com.mitocode.dao.IComidaDAO;
+import com.mitocode.model.Comida;
+import com.mitocode.service.IComidaService;
 
 /**
  * @author BRYAN
  *
  */
 @Service
-public class PeliculaService implements IPeliculaService{
+public class ComidaServiceImpl implements IComidaService{
 
 	@Autowired
-	private IPeliculaDAO dao;
+	private IComidaDAO dao;
 	
 	@Override
-	public Pelicula registrar(Pelicula obj) {
+	public Comida registrar(Comida obj) {
 		return dao.save(obj);
 	}
 
 	@Override
-	public Pelicula modificar(Pelicula obj) {
+	public Comida modificar(Comida obj) {
 		return dao.save(obj);
 	}
 
 	@Override
-	public List<Pelicula> listar() {
+	public List<Comida> listar() {
 		return dao.findAll();
 	}
 
 	@Override
-	public Pelicula leer(Integer id) {
-		Optional<Pelicula> op = dao.findById(id);
-		return op.isPresent() ? op.get() : new Pelicula();
+	public Comida leer(Integer id) {
+		Optional<Comida> op = dao.findById(id);
+		return op.isPresent() ? op.get() : new Comida();
 	}
 
 	@Override

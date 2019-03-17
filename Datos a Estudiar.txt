@@ -3,4 +3,9 @@ Richardson Maturity Model
 - Link: https://docs.google.com/document/d/1faKBjY42dKu_GpjsktT6gqbH2jW4CU5poyhM0r4aZ6k/edit
 - https://www.objectdb.com/
 
--extension: RestFull Stress
+-extension: RestFull Stress, JSONView
+
+-Requisitos para Angular:
+	->Node.js
+	->AngularCLI
+	->VisualCode (Preferencia)
