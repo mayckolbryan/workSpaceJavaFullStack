@@ -9,26 +9,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author Usuario
  *
  */
+//@ApiModel provee informacion adicional para la documentacion de swagger.
+@ApiModel(description = "Genero de la pelicula")
 @Entity
 @Table(name="genero")
 public class Genero {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idGenero;
-	
+	private Integer idGenero;
+
+	@ApiModelProperty(notes = "Nombres debe tener minimo 3 caracteres")
+	@Size(min = 3, message = "[nombre] Minimo 3 caracteres")
 	@Column(name="nombre", length=20)
 	private String nombre;
 	
-	public int getIdGenero() {
+	public Integer getIdGenero() {
 		return idGenero;
 	}
-	public void setIdGenero(int idGenero) {
+	public void setIdGenero(Integer idGenero) {
 		this.idGenero = idGenero;
 	}
 	public String getNombre() {

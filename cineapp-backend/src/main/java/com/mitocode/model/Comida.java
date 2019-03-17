@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  *
  */
 @Entity
+//@JsonInclude puede ser usado para excluir propiedades con valores nulos, vacios y por defecto.
 @JsonInclude(Include.NON_NULL)
 public class Comida {
 	

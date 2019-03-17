@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="detalleVenta")
 public class DetalleVenta {
 	
+	//@JsonIgnore señala un campo de un Pojo para ser ignorado por Jackson durante la serializacion y deserealizacion.
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_venta", nullable = false, foreignKey = @ForeignKey(name = "id_detalle_venta"))
