@@ -1,0 +1,6 @@
+npm clean cache --force  		--> Limpia la cache.
+npm install -g @angular/cli		--> Instala angular.
+npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angular.
+ng new demo				--> Crea proyecto de angular.
+ng serve				--> Levanta el proyecto de Angular.
+ng serve --open				--> Levanta el proyecto de Angular y abre el navegador en el puerto 4200 por defecto.
