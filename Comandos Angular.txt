@@ -4,3 +4,14 @@ npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angul
 ng new demo				--> Crea proyecto de angular.
 ng serve				--> Levanta el proyecto de Angular.
 ng serve --open				--> Levanta el proyecto de Angular y abre el navegador en el puerto 4200 por defecto.
+npm install				--> Generar la carpeta node_modeules.
+ng generate component pages/genero --spec=false	--> Crear un componente (ts, html y css) y referencia en el app.modules.ts
+ng generate service _service/genero --spec=false	--> Crear un service	
+npm install @angular/cdk --save		--> Para descargar la librería cdk y se registre en el package.json. (dependecia para Angular Material)
+ng add @angular/material		--> Se agrega Angular Material
+ng generate module --spec=false		--> Crea otro archivo de configuracion para organizar.
+
+Datos:
+- Package.json: Archivo de configuracion para las librerias.
+- A partir de Angular 6 a más ya no es necesario registrar los service en los providers de app.modules.ts.
+- environment.ts para definir variables globales.
