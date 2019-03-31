@@ -29,6 +29,7 @@ export class GeneroDialogoComponent implements OnInit {
       this.generoService.modificar(this.genero).subscribe(() => {
         this.generoService.listar().subscribe(data => {
           this.generoService.generoCambio.next(data);
+          this.generoService.mensajeCambio.next('Se Modifico');
         });
       });
     } else{
@@ -36,6 +37,7 @@ export class GeneroDialogoComponent implements OnInit {
       this.generoService.registrar(this.genero).subscribe(()=> {
         this.generoService.listar().subscribe(data => {
           this.generoService.generoCambio.next(data);
+          this.generoService.mensajeCambio.next('Se Registro');
         });
       });
     }

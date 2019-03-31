@@ -11,8 +11,13 @@ ng generate service _service/genero --spec=false	--> Crear un service
 npm install @angular/cdk --save		--> Para descargar la librería cdk y se registre en el package.json. (dependecia para Angular Material)
 ng add @angular/material		--> Se agrega Angular Material
 ng generate module --spec=false		--> Crea otro archivo de configuracion para organizar.
+npm install moment --save		--> Descargar librería Moment para las fechas.
 
 Datos:
+- [(ngModel)] toWayBinding para capturar los valores y llevarlos a back.
+- En html el typescript usa [] para modificación de atributos.
+- En html el typescript usa () para la ejecución de eventos.
+- En html el typescript usa # para asignar un apodo a un componente.
 - Package.json: Archivo de configuracion para las librerias.
 - A partir de Angular 6 a más ya no es necesario registrar los service en los providers de app.modules.ts.
 - environment.ts para definir variables globales.

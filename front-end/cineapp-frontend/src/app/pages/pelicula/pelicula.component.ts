@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { PeliculaService } from './../../_service/pelicula.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort, MatSnackBar } from '@angular/material';
+import { Pelicula } from 'src/app/_model/pelicula';
 
 @Component({
   selector: 'app-pelicula',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculaComponent implements OnInit {
 
-  constructor() { }
+  dataSource: MatTableDataSource<Pelicula>;
+  displayedColumns = ['idPelicula', 'nombre', 'resena', 'duracion', 
+                      'fechaPublicacion', 'urlPortada', 'genero', 'acciones'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+ 
+  constructor(private peliculaService: PeliculaService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.peliculaService.listar().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
+
+    this.peliculaService.peliculaCambio.subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
+
+    this.peliculaService.mensajeCambio.subscribe(data => {
+      this.snackBar.open(data, 'INFO', {
+        duration: 2000
+      });
+    });
+
+  }
+
+  eliminar(pelicula: Pelicula) {
+    this.peliculaService.eliminar(pelicula).subscribe(() => {
+      this.peliculaService.listar().subscribe(data => {
+        this.peliculaService.peliculaCambio.next(data);
+        this.peliculaService.mensajeCambio.next('SE ELIMINO');
+      });      
+    });
   }
 
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatDialogModule,
-         MatSidenavModule, MatDividerModule, MatToolbarModule, MatMenuModule } from '@angular/material';
+         MatSidenavModule, MatDividerModule, MatToolbarModule, MatMenuModule, MatSnackBarModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MAT_DATE_LOCALE } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -20,7 +20,12 @@ import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, Mat
     MatSidenavModule,
     MatDividerModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,  //Para cambiar el idioma al calendar.
+    MatSelectModule
   ],
   exports:[
     MatButtonModule,
@@ -34,7 +39,15 @@ import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, Mat
     MatSidenavModule,
     MatDividerModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
+  ],
+  providers:[
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
   ]
 })
 export class MaterialModule { }

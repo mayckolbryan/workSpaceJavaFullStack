@@ -11,6 +11,7 @@ export class GeneroService {
   url:string = `${environment.HOST_URL}/generos`;
 
   generoCambio = new Subject<Genero[]>();
+  mensajeCambio = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 

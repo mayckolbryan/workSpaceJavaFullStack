@@ -8,9 +8,12 @@ import { GeneroComponent } from './pages/genero/genero.component';
 import { PeliculaComponent } from './pages/pelicula/pelicula.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GeneroDialogoComponent } from './pages/genero/genero-dialogo/genero-dialogo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfiguracionComponent } from './pages/configuracion/configuracion.component';
 import { ConfiguracionDialogoComponent } from './pages/configuracion/configuracion-dialogo/configuracion-dialogo.component';
+import { PeliculaEdicionComponent } from './pages/pelicula/pelicula-edicion/pelicula-edicion.component';
+import { ComidaComponent } from './pages/comida/comida.component';
+import { ComidaDialogoComponent } from './pages/comida/comida-dialogo/comida-dialogo.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +22,23 @@ import { ConfiguracionDialogoComponent } from './pages/configuracion/configuraci
     PeliculaComponent,
     GeneroDialogoComponent,
     ConfiguracionComponent,
-    ConfiguracionDialogoComponent
+    ConfiguracionDialogoComponent,
+    PeliculaEdicionComponent,
+    ComidaComponent,
+    ComidaDialogoComponent
   ],
   entryComponents:[
     GeneroDialogoComponent,
-    ConfiguracionDialogoComponent
+    ConfiguracionDialogoComponent,
+    ComidaDialogoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,  //Para trabajar con ngModels.
+    ReactiveFormsModule //Para trabajar con formularios.
   ],
   providers: [],
   bootstrap: [AppComponent]
