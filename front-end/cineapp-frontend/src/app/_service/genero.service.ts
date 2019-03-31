@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class GeneroService {
   url:string = `${environment.HOST_URL}/generos`;
-  
+
   generoCambio = new Subject<Genero[]>();
 
   constructor(private http: HttpClient) { }
@@ -19,7 +19,7 @@ export class GeneroService {
   }
 
   listarPorId(genero: Genero){
-    return this.http.get<Genero>(`${environment.HOST_URL}/${genero.idGenero}`);
+    return this.http.get<Genero>(`${this.url}/${genero.idGenero}`);
   }
 
   registrar(genero: Genero){
@@ -31,6 +31,6 @@ export class GeneroService {
   }
 
   eliminar(genero: Genero){
-    return this.http.delete(`${environment.HOST_URL}/${genero.idGenero}`);
+    return this.http.delete(`${this.url}/${genero.idGenero}`);
   }
 }

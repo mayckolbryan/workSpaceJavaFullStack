@@ -9,10 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./genero-dialogo.component.css']
 })
 export class GeneroDialogoComponent implements OnInit {
-  
+
   genero: Genero;
 
-  constructor(public dialogRef: MatDialogRef<Genero>, 
+  constructor(public dialogRef: MatDialogRef<Genero>,
     @Inject(MAT_DIALOG_DATA) public data: Genero,
     private generoService: GeneroService) { }
 
@@ -42,4 +42,7 @@ export class GeneroDialogoComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  cancelar(){
+    this.dialogRef.close();
+  }
 }

@@ -49,4 +49,12 @@ export class GeneroComponent implements OnInit {
       width: '250px'
     });
   }
+
+  eliminar(genero: Genero){
+    this.generoService.eliminar(genero).subscribe(() => {
+      this.generoService.listar().subscribe(data => {
+        this.generoService.generoCambio.next(data);
+      });
+    });
+  }
 }

@@ -4,6 +4,7 @@ npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angul
 ng new demo				--> Crea proyecto de angular.
 ng serve				--> Levanta el proyecto de Angular.
 ng serve --open				--> Levanta el proyecto de Angular y abre el navegador en el puerto 4200 por defecto.
+ng serve --port 4201 --open		--> Levanta el proyecto en otro puerto.
 npm install				--> Generar la carpeta node_modeules.
 ng generate component pages/genero --spec=false	--> Crear un componente (ts, html y css) y referencia en el app.modules.ts
 ng generate service _service/genero --spec=false	--> Crear un service	
