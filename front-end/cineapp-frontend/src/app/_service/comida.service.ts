@@ -19,16 +19,48 @@ export class ComidaService {
     return this.http.get<Comida[]>(this.url);
   }
 
-  listarPorId(comida: Comida){
-    return this.http.get<Comida>(`${this.url}/${comida.idComida}`);
+  // listarPorId(comida: Comida){
+  //   return this.http.get<Comida>(`${this.url}/${comida.idComida}`);
+  // }
+
+  listarPorId(id: number) {
+    return this.http.get(`${this.url}/${id}`, {
+      responseType: 'blob'
+    });
   }
 
-  registrar(comida: Comida){
-    return this.http.post(this.url, comida);
+  // registrar(comida: Comida){
+  //   return this.http.post(this.url, comida);
+  // }
+
+  // modificar(comida: Comida){
+  //   return this.http.put(this.url, comida);
+  // }
+
+
+
+  registrar(comida: Comida, file?: File) {
+    let formdata: FormData = new FormData();
+    formdata.append('file', file);
+
+    const comidaBlob = new Blob([JSON.stringify(comida)], { type: "application/json" });
+    formdata.append('comida', comidaBlob);
+
+    return this.http.post(`${this.url}`, formdata, {
+      responseType: 'text'
+    });
   }
 
-  modificar(comida: Comida){
-    return this.http.put(this.url, comida);
+  modificar(comida: Comida, file?: File) {
+    let formdata: FormData = new FormData();
+    formdata.append('file', file);
+
+    const comidaBlob = new Blob([JSON.stringify(comida)], { type: "application/json" });
+    formdata.append('comida', comidaBlob);
+
+    return this.http.put(`${this.url}`, formdata, {
+      responseType: 'text'
+    });
   }
 
   eliminar(comida: Comida){

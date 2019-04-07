@@ -15,7 +15,7 @@ export class ComidaComponent implements OnInit {
   dataSource: MatTableDataSource<Comida>;
   displayedColumns: string[] = ['idComida', 'nombre', 'precio', 'acciones'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort:MatSort;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private comidaService: ComidaService, private dialog : MatDialog, private snackBar: MatSnackBar) { }
 
@@ -30,7 +30,7 @@ export class ComidaComponent implements OnInit {
       this.snackBar.open(msg, 'INFO', {
         duration: 2000
       });
-    }) 
+    });
 
     this.comidaService.comidaCambio.subscribe(data => {
       this.dataSource = new MatTableDataSource<Comida>(data);
