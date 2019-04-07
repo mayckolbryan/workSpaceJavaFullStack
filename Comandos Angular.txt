@@ -12,6 +12,7 @@ npm install @angular/cdk --save		--> Para descargar la librería cdk y se registr
 ng add @angular/material		--> Se agrega Angular Material
 ng generate module --spec=false		--> Crea otro archivo de configuracion para organizar.
 npm install moment --save		--> Descargar librería Moment para las fechas.
+npm install @angular/flex-layout@latest --save 		--> Instalar librería Flex.
 
 Datos:
 - [(ngModel)] toWayBinding para capturar los valores y llevarlos a back.
@@ -21,3 +22,8 @@ Datos:
 - Package.json: Archivo de configuracion para las librerias.
 - A partir de Angular 6 a más ya no es necesario registrar los service en los providers de app.modules.ts.
 - environment.ts para definir variables globales.
+- "blob" indica que la respesta va a estar en crudo (arreglo de bytes).
+- Las variables de Angular en el Html estan en constante conexión con el TypeScript (let p of peliculas), 
+  por eso al modificar el valor de un objeto en TypeSrpit se ve reflejado en la vista sin la necesidad de 
+  refrescar el componenete de la vista siempre y cuando sean objetos simples, pero en el caso de 
+  MatTableDataSource necesita ser repoblado por completo.

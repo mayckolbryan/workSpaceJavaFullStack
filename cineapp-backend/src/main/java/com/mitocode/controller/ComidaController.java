@@ -41,7 +41,8 @@ public class ComidaController {
 		List<Comida> lista = service.listar();
 		return new ResponseEntity<>(lista, HttpStatus.OK);
 	}
-	
+
+	//	MediaType.APPLICATION_OCTET_STREAM_VALUE indica que devuelve una respuesta en crudo (arreglo de bytes)
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	public ResponseEntity<byte[]> listarPorId(@PathVariable("id") Integer id) {
 		Comida c = service.leer(id);

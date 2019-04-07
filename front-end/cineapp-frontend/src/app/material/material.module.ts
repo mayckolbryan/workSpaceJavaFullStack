@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatDialogModule,
-         MatSidenavModule, MatDividerModule, MatToolbarModule, MatMenuModule, MatSnackBarModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MAT_DATE_LOCALE } from '@angular/material';
+         MatSidenavModule, MatDividerModule, MatToolbarModule, MatMenuModule, MatSnackBarModule, MatCardModule, MatDatepickerModule, 
+         MatNativeDateModule, MatSelectModule, MAT_DATE_LOCALE, MatStepperModule, MatGridListModule, MatCheckboxModule, MatListModule, MatChipsModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,12 @@ import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, Mat
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,  //Para cambiar el idioma al calendar.
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    MatGridListModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatChipsModule
   ],
   exports:[
     MatButtonModule,
@@ -44,7 +50,12 @@ import { MatButtonModule, MatTableModule, MatIconModule, MatPaginatorModule, Mat
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    MatGridListModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatChipsModule
   ],
   providers:[
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }

@@ -3,10 +3,15 @@
  */
 package com.mitocode.service.impl;
 
+import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.dao.IVentaComidaDAO;
@@ -14,6 +19,11 @@ import com.mitocode.dao.IVentaDAO;
 import com.mitocode.dto.VentaDTO;
 import com.mitocode.model.Venta;
 import com.mitocode.service.IVentaService;
+
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 /**
  * @author BRYAN
@@ -63,6 +73,32 @@ public class VentaServiceImpl implements IVentaService{
 		ventaDTO.getLstComidas().forEach( c -> vDao.registrar(ventaDTO.getVenta().getIdVenta() , c.getIdComida()));
 		return 1;
 
+	}
+
+	@Override
+	public byte[] generarReporte(VentaDTO venta) {
+		byte[] data = null;
+
+		try {
+			Map<String, Object> parametros = new HashMap<>();
+			parametros.put("cliente", venta.getVenta().getCliente().getNombres());
+			parametros.put("pelicula", venta.getVenta().getPelicula().getNombre());
+			parametros.put("total", "S/ " + venta.getVenta().getTotal());
+			parametros.put("asientos", venta.getVenta().getDetalle().stream().map(Object::toString).collect(Collectors.joining(",")));
+
+			File file = new ClassPathResource("/reports/impresion.jasper").getFile();
+			JasperPrint print = JasperFillManager.fillReport(file.getPath(), parametros,
+					new JRBeanCollectionDataSource(venta.getLstComidas()));
+			data = JasperExportManager.exportReportToPdf(print);
+
+			// Imprime y no muestra cuadro dialogo, debido a que es web y no desktop awt (por eso el segundo parametro es false)
+			// JasperPrintManager.printReport(print, false);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return data;
 	}
 
 }

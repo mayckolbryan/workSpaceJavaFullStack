@@ -50,4 +50,9 @@ public class ConfigServiceImpl implements IConfigService{
 		dao.deleteById(id);
 	}
 
+	@Override
+	public Config leerParametro(String parametro) {
+		return dao.findByParametro(parametro);
+	}
+
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -84,5 +85,12 @@ public class VentaController {
 		}else {
 			service.eliminar(id);
 		}
+	}
+	
+	@PostMapping(value = "/generarReporte", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE, consumes = "application/json")
+	public ResponseEntity<byte[]> generarReporte(@RequestBody VentaDTO venta) {
+		byte[] data = null;
+		data = service.generarReporte(venta);
+		return new ResponseEntity<byte[]>(data, HttpStatus.OK);
 	}
 }

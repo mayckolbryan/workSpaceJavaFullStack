@@ -1,3 +1,4 @@
+import { VentaComponent } from './pages/venta/venta.component';
 import { ComidaComponent } from './pages/comida/comida.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,7 +14,8 @@ const routes: Routes = [
     {path: 'edicion/:id', component: PeliculaEdicionComponent}
   ] },
   { path: 'configuracion', component: ConfiguracionComponent },
-  { path: 'comida', component: ComidaComponent }
+  { path: 'comida', component: ComidaComponent },
+  { path: 'venta', component: VentaComponent }
 ];
 
 @NgModule({

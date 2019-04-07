@@ -14,6 +14,8 @@ import { ConfiguracionDialogoComponent } from './pages/configuracion/configuraci
 import { PeliculaEdicionComponent } from './pages/pelicula/pelicula-edicion/pelicula-edicion.component';
 import { ComidaComponent } from './pages/comida/comida.component';
 import { ComidaDialogoComponent } from './pages/comida/comida-dialogo/comida-dialogo.component';
+import { VentaComponent } from './pages/venta/venta.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ComidaDialogoComponent } from './pages/comida/comida-dialogo/comida-dia
     ConfiguracionDialogoComponent,
     PeliculaEdicionComponent,
     ComidaComponent,
-    ComidaDialogoComponent
+    ComidaDialogoComponent,
+    VentaComponent
   ],
   entryComponents:[
     GeneroDialogoComponent,
@@ -38,7 +41,8 @@ import { ComidaDialogoComponent } from './pages/comida/comida-dialogo/comida-dia
     MaterialModule,
     HttpClientModule,
     FormsModule,  //Para trabajar con ngModels.
-    ReactiveFormsModule //Para trabajar con formularios.
+    ReactiveFormsModule, //Para trabajar con formularios.
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

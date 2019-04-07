@@ -63,6 +63,11 @@ public class ConfigController {
 		return resource;
 	}
 	
+	@GetMapping(value = "/buscar/{param}")
+	public Config listarPorParametro(@PathVariable("param") String param){
+		return service.leerParametro(param);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Config> registrar(@RequestBody Config conf) {
 		Config genero = service.registrar(conf);
