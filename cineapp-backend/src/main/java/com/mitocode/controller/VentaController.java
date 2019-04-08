@@ -87,6 +87,7 @@ public class VentaController {
 		}
 	}
 	
+	//MediaType.APPLICATION_OCTET_STREAM_VALUE indica que devuelve una respuesta en crudo (arreglo de bytes)
 	@PostMapping(value = "/generarReporte", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE, consumes = "application/json")
 	public ResponseEntity<byte[]> generarReporte(@RequestBody VentaDTO venta) {
 		byte[] data = null;
