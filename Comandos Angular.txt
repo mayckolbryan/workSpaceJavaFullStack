@@ -1,6 +1,6 @@
 npm clean cache --force  		--> Limpia la cache.
-npm install -g @angular/cli		--> Instala angular.
-npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angular.
+npm install -g @angular/cli		--> Instalar angularCLI.
+npm install -g @angular/cli@7.3.3	--> Instala una version en especÃ­fico de angularCLI.
 ng new demo				--> Crea proyecto de angular.
 ng serve				--> Levanta el proyecto de Angular.
 ng serve --open				--> Levanta el proyecto de Angular y abre el navegador en el puerto 4200 por defecto.
@@ -8,22 +8,22 @@ ng serve --port 4201 --open		--> Levanta el proyecto en otro puerto.
 npm install				--> Generar la carpeta node_modeules.
 ng generate component pages/genero --spec=false	--> Crear un componente (ts, html y css) y referencia en el app.modules.ts
 ng generate service _service/genero --spec=false	--> Crear un service	
-npm install @angular/cdk --save		--> Para descargar la librería cdk y se registre en el package.json. (dependecia para Angular Material)
+npm install @angular/cdk --save		--> Para descargar la librerÃ­a cdk y se registre en el package.json. (dependecia para Angular Material)
 ng add @angular/material		--> Se agrega Angular Material
 ng generate module --spec=false		--> Crea otro archivo de configuracion para organizar.
-npm install moment --save		--> Descargar librería Moment para las fechas.
-npm install @angular/flex-layout@latest --save 		--> Instalar librería Flex.
+npm install moment --save		--> Descargar librerÃ­a Moment para las fechas.
+npm install @angular/flex-layout@latest --save 		--> Instalar librerÃ­a Flex.
 
 Datos:
 - [(ngModel)] toWayBinding para capturar los valores y llevarlos a back.
-- En html el typescript usa [] para modificación de atributos.
-- En html el typescript usa () para la ejecución de eventos.
+- En html el typescript usa [] para modificaciÃ³n de atributos.
+- En html el typescript usa () para la ejecuciÃ³n de eventos.
 - En html el typescript usa # para asignar un apodo a un componente.
 - Package.json: Archivo de configuracion para las librerias.
-- A partir de Angular 6 a más ya no es necesario registrar los service en los providers de app.modules.ts.
+- A partir de Angular 6 a mÃ¡s ya no es necesario registrar los service en los providers de app.modules.ts.
 - environment.ts para definir variables globales.
 - "blob" indica que la respesta va a estar en crudo (arreglo de bytes).
-- Las variables de Angular en el Html estan en constante conexión con el TypeScript (let p of peliculas), 
+- Las variables de Angular en el Html estan en constante conexiÃ³n con el TypeScript (let p of peliculas), 
   por eso al modificar el valor de un objeto en TypeSrpit se ve reflejado en la vista sin la necesidad de 
   refrescar el componenete de la vista siempre y cuando sean objetos simples, pero en el caso de 
   MatTableDataSource necesita ser repoblado por completo.
