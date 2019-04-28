@@ -1,4 +1,4 @@
-npm clean cache --force  		--> Limpia la cache.
+﻿npm clean cache --force  		--> Limpia la cache.
 npm install -g @angular/cli		--> Instalar angularCLI.
 npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angularCLI.
 ng new demo				--> Crea proyecto de angular.
@@ -13,6 +13,7 @@ ng add @angular/material		--> Se agrega Angular Material
 ng generate module --spec=false		--> Crea otro archivo de configuracion para organizar.
 npm install moment --save		--> Descargar librería Moment para las fechas.
 npm install @angular/flex-layout@latest --save 		--> Instalar librería Flex.
+npm install @auth0/angular-jwt --save 		--> Instalar angular JWT.
 
 Datos:
 - [(ngModel)] toWayBinding para capturar los valores y llevarlos a back.
@@ -27,3 +28,8 @@ Datos:
   por eso al modificar el valor de un objeto en TypeSrpit se ve reflejado en la vista sin la necesidad de 
   refrescar el componenete de la vista siempre y cuando sean objetos simples, pero en el caso de 
   MatTableDataSource necesita ser repoblado por completo.
+- La librería de angular JWT me permite decodificar los token.
+- En un Guard no usar .subscribe() ya que este se manjea en otro hilo y puede terminar antes, en su lugar se usa .pipe() que sirve para progrmar
+  reactivamente de manera continua.
+- DigitalOcean es un VPS que es como una maquina virtual.
+- MobaXterm sirve para hacer peticiones a servidores.
