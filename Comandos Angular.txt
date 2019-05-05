@@ -1,4 +1,4 @@
-﻿npm clean cache --force  		--> Limpia la cache.
+npm clean cache --force  		--> Limpia la cache.
 npm install -g @angular/cli		--> Instalar angularCLI.
 npm install -g @angular/cli@7.3.3	--> Instala una version en específico de angularCLI.
 ng new demo				--> Crea proyecto de angular.
@@ -14,6 +14,8 @@ ng generate module --spec=false		--> Crea otro archivo de configuracion para org
 npm install moment --save		--> Descargar librería Moment para las fechas.
 npm install @angular/flex-layout@latest --save 		--> Instalar librería Flex.
 npm install @auth0/angular-jwt --save 		--> Instalar angular JWT.
+ng build				--> Ejecuta el proyecto Angular optimizandolo pero con las variables de Desarrollo.
+ng build --prod				--> Ejecuta el proyecto Angular optimizandolo, mimificandolo y con la libreria uglify 
 
 Datos:
 - [(ngModel)] toWayBinding para capturar los valores y llevarlos a back.
@@ -33,3 +35,16 @@ Datos:
   reactivamente de manera continua.
 - DigitalOcean es un VPS que es como una maquina virtual.
 - MobaXterm sirve para hacer peticiones a servidores.
+- Para la subida al servidor del proyecto Spring se obtiene el War de la carpeta Target al ejecutar el comando install con maven.
+- Recomendacion de poner las imagenes en la carpeta "/assets" ya que al tener el compilado de Angular si se desea modificar, 
+  solo se agrega en esa carpeta sin volver a compilar el proyecto.
+- "{ provide: LocationStrategy, useClass: HashLocationStrategy }]," esta linea en el archivo app.module.ts se usa para solucionar
+  el error del proyecto Angular en el servidor que no permite recargar la pagina en otras rutas.
+- Tomcat a diferencia de WidFly, permite subir archivos Js de manera suelta, sin estar en un war, por eso se puede subir los
+  2 proyectos de manera separada, en cambio en WidFly tienen que estar en el mismo war.
+- TeamForest es una pagina de venta de plantillas de paga para Angular.
+- SpringCloud esta basado con la comunidad Netflix OSS que esta basado en Microservicios.
+- Para Microservicios con Spring Cloud se debe comenzar con el Proyecto Descubridor EUREKA y luego con los proyectos independientes
+  que seran descubiertos.
+- @EnableEurekaServer indica que va a ser descubierto por EUREKA.
+- EUREKA solo descubre proyectos en Java.
