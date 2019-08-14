@@ -7,9 +7,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -39,6 +42,10 @@ public class Mueble {
 	@JsonSerialize(using = ToStringSerializer.class)
 	@Column(name="fechaPublicacion")
 	private LocalDate fechaPublicacion;
+	
+	@ManyToOne
+	@JoinColumn(name="id_tipo_mueble", nullable=false, foreignKey=@ForeignKey(name="id_mueble_tipo_mueble"))
+	private TipoMueble tipoMueble;
 
 	public int getIdMueble() {
 		return idMueble;
@@ -79,4 +86,13 @@ public class Mueble {
 	public void setFechaPublicacion(LocalDate fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
+
+	public TipoMueble getTipoMueble() {
+		return tipoMueble;
+	}
+
+	public void setTipoMueble(TipoMueble tipoMueble) {
+		this.tipoMueble = tipoMueble;
+	}
+	
 }

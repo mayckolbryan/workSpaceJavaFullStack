@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="tipoMueble")
-public class tipoMueble {
+public class TipoMueble {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

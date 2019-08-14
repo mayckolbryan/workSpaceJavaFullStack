@@ -52,8 +52,8 @@ public class MuebleController {
 		return muebleService.listarPorColor(color);
 	}
 	
-	@PostMapping
-	public Integer registrarOnlyTela(Mueble m) {
-		return muebleService.registrarOnlyTela(m);
-	}
+//	@PostMapping
+//	public Integer registrarOnlyTela(Mueble m) {
+//		return muebleService.registrarOnlyTela(m);
+//	}
 }
