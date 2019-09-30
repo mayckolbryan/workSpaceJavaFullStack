@@ -16,7 +16,7 @@ import com.example.model.Mueble;
 import com.example.service.IMuebleService;
 
 @RestController
-@RequestMapping(value="muebles")
+@RequestMapping(value="web/muebles")
 public class MuebleController {
 
 	@Autowired

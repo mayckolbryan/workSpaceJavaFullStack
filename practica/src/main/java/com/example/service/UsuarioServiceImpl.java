@@ -27,7 +27,7 @@ public class UsuarioServiceImpl implements UserDetailsService{
 		Usuario us = dao.findByUsername(username);
 		
 		List<GrantedAuthority> roles = new ArrayList<GrantedAuthority>();
-		roles.add(new SimpleGrantedAuthority("ADMIN	"));
+		roles.add(new SimpleGrantedAuthority("ADMIN"));
 		
 		UserDetails userDet = new User(us.getUsername(), us.getPassword(), roles);
 		
